@@ -1,0 +1,585 @@
+/* ===================================
+   SPOTIFY-INSPIRED DARK THEME STYLES
+   =================================== */
+
+/* CSS Variables - Spotify Color Palette */
+:root {
+    /* Spotify Colors */
+    --spotify-black: #000000;
+    --spotify-dark-gray: #121212;
+    --spotify-gray: #191414;
+    --spotify-light-gray: #282828;
+    --spotify-green: #1db954;
+    --spotify-green-hover: #1ed760;
+    --spotify-green-dark: #1aa34a;
+    --spotify-white: #ffffff;
+    --spotify-light-white: #b3b3b3;
+    --spotify-text-gray: #a7a7a7;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #b3b3b3;
+    --text-muted: #a7a7a7;
+    
+    /* Background Colors */
+    --bg-primary: #121212;
+    --bg-secondary: #191414;
+    --bg-tertiary: #282828;
+    
+    /* Border Colors */
+    --border-color: #404040;
+    --border-light: #535353;
+    
+    /* Gradients */
+    --spotify-gradient: linear-gradient(135deg, #1db954 0%, #1ed760 100%);
+    --dark-gradient: linear-gradient(135deg, #191414 0%, #121212 100%);
+    --subtle-gradient: linear-gradient(180deg, rgba(29, 185, 84, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    
+    /* Typography */
+    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-secondary: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    
+    /* Font Sizes */
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    --spacing-4xl: 6rem;
+    --spacing-5xl: 8rem;
+    
+    /* Border Radius - Spotify Style */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    --radius-full: 50px;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.25);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.4);
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-normal: 0.25s ease;
+    --transition-slow: 0.4s ease;
+    
+    /* Z-index */
+    --z-dropdown: 1000;
+    --z-sticky: 1020;
+    --z-fixed: 9999;
+    --z-modal-backdrop: 1040;
+    --z-modal: 1050;
+    --z-popover: 1060;
+    --z-tooltip: 1070;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--spotify-dark-gray);
+    color: var(--spotify-white);
+    line-height: 1.6;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* ===================================
+   NAVIGATION STYLES
+   =================================== */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(40, 40, 40, 0.3);
+    z-index: 999999;
+    transition: var(--transition-normal);
+    padding: 0; /* Remove vertical padding to rely on height and centering */
+    height: 70px;
+    box-sizing: border-box;
+    margin: 0;
+    display: flex;
+    align-items: center; /* Center content vertically */
+}
+
+.navbar.scrolled {
+    background: rgba(18, 18, 18, 0.98);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Force navbar to stay on top */
+body {
+    position: relative;
+    z-index: 1;
+}
+
+.navbar {
+    z-index: 999999 !important;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    z-index: 999999;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden; /* Contain effects within container */
+}
+
+/* Brand/Logo Styles */
+.nav-brand {
+    flex-shrink: 0;
+}
+
+.brand-link {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--spotify-white);
+    transition: var(--transition-fast);
+}
+
+.brand-link:hover {
+    transform: translateY(-1px);
+}
+
+.brand-name {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--spotify-green);
+    line-height: 1.2;
+    background: var(--spotify-gradient);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.brand-title {
+    font-size: var(--font-size-sm);
+    color: var(--spotify-light-white);
+    font-weight: 400;
+    margin-top: -2px;
+    letter-spacing: 0.5px;
+}
+
+/* Desktop Navigation Menu */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center; /* Center nav items vertically */
+    gap: var(--spacing-xl);
+    position: relative;
+    overflow: visible; /* Allow proper hover effects */
+    margin: 0; /* Remove any default margins */
+    padding: 0; /* Remove any default padding */
+}
+
+.nav-item {
+    position: relative;
+    overflow: visible; /* Allow proper hover effects */
+    margin: 0; /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+}
+
+/* Remove focus outline from nav items */
+.nav-item:focus,
+.nav-item:active {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+.nav-link {
+    display: inline-block; /* Simple inline-block for natural centering */
+    text-decoration: none;
+    color: var(--spotify-light-white);
+    font-size: var(--font-size-base);
+    font-weight: 500;
+    padding: var(--spacing-md) var(--spacing-lg); /* Increase padding for better vertical centering */
+    border-radius: var(--radius-full);
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text wrapping */
+    line-height: 1; /* Consistent line height */
+    vertical-align: middle; /* Help with vertical centering */
+    outline: none; /* Remove default focus outline */
+    border: none; /* Remove any default border */
+}
+
+/* Remove all focus/active outlines and borders */
+.nav-link:focus,
+.nav-link:active,
+.nav-link:focus-visible {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove focus from nav items as well */
+.nav-item:focus,
+.nav-item:active,
+.nav-item:focus-visible {
+    outline: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--spotify-gradient);
+    opacity: 0;
+    border-radius: var(--radius-full);
+    transition: var(--transition-normal);
+    z-index: -1;
+    transform: scale(0.9); /* Slightly smaller to stay within bounds */
+}
+
+.nav-link:hover {
+    color: var(--spotify-white);
+    transform: translateY(-2px);
+}
+
+.nav-link:hover::before {
+    opacity: 0.1;
+    transform: scale(1); /* Scale to full size on hover */
+}
+
+.nav-link.active {
+    color: var(--spotify-green);
+    background: rgba(29, 185, 84, 0.1);
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    box-shadow: inset 0 0 0 1px rgba(29, 185, 84, 0.2); /* Inner glow */
+}
+
+.nav-link.active::before {
+    opacity: 0.15;
+    transform: scale(0.95); /* Slightly contained */
+}
+
+/* Mobile Hamburger Menu */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+}
+
+.hamburger:hover {
+    background: rgba(29, 185, 84, 0.1);
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: var(--spotify-green);
+    margin: 3px 0;
+    transition: var(--transition-normal);
+    border-radius: var(--radius-sm);
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* ===================================
+   SECTION STYLES (Placeholder)
+   =================================== */
+
+.main-content {
+    margin-top: 70px;
+    position: relative;
+    z-index: 1;
+    padding-top: 0;
+}
+
+.section {
+    min-height: 100vh;
+    padding: var(--spacing-3xl) 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section {
+    min-height: calc(100vh - 80px);
+    background: var(--dark-gradient);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--subtle-gradient);
+    z-index: 1;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Section placeholder styles */
+.section h2 {
+    color: var(--spotify-green);
+    font-size: var(--font-size-3xl);
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN - MOBILE
+   =================================== */
+
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .brand-name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .brand-title {
+        font-size: var(--font-size-xs);
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 80px;
+        flex-direction: column;
+        background: var(--spotify-gray);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition-normal);
+        box-shadow: var(--shadow-xl);
+        gap: 0;
+        padding: var(--spacing-xl) 0;
+        border-top: 1px solid rgba(40, 40, 40, 0.3);
+        overflow: hidden; /* Contain mobile menu effects */
+        max-width: 100vw; /* Prevent overflow beyond viewport */
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: var(--spacing-sm) 0;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: var(--spacing-md) var(--spacing-xl);
+        font-size: var(--font-size-lg);
+        border-radius: var(--radius-lg);
+        margin: 0 var(--spacing-lg);
+        max-width: calc(100% - var(--spacing-2xl)); /* Prevent overflow */
+        box-sizing: border-box;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 0 var(--spacing-md);
+        height: 70px;
+    }
+    
+    .brand-name {
+        font-size: var(--font-size-base);
+    }
+    
+    .brand-title {
+        font-size: 0.7rem;
+    }
+    
+    .main-content {
+        margin-top: 70px;
+    }
+    
+    .nav-menu {
+        top: 70px;
+    }
+    
+    .hamburger {
+        padding: var(--spacing-xs);
+    }
+    
+    .bar {
+        width: 20px;
+        height: 2px;
+    }
+}
+
+/* ===================================
+   ENHANCED SECTION SPACING & TYPOGRAPHY
+   =================================== */
+
+/* Section Spacing Improvements */
+.hero-section,
+.about-section,
+.skills-section,
+.projects-section {
+    padding: var(--spacing-5xl) 0;
+    position: relative;
+}
+
+/* Section Dividers */
+.about-section::before,
+.skills-section::before,
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    opacity: 0.6;
+}
+
+/* Enhanced Section Headers */
+.section-header {
+    margin-bottom: var(--spacing-5xl);
+    text-align: center;
+}
+
+/* Text Spacing Improvements */
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+}
+
+p {
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.7;
+}
+
+/* List Spacing */
+ul, ol {
+    margin-bottom: var(--spacing-lg);
+}
+
+li {
+    margin-bottom: var(--spacing-sm);
+}
+
+/* Button Spacing */
+.hero-cta,
+.about-cta,
+.project-links {
+    margin-top: var(--spacing-xl);
+}
+
+/* Card Spacing */
+.skill-category,
+.project-card,
+.detail-group,
+.highlight-card {
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Content Spacing */
+.hero-content > *,
+.about-text > *,
+.project-content > * {
+    margin-bottom: var(--spacing-lg);
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+    .hero-section,
+    .about-section,
+    .skills-section,
+    .projects-section {
+        padding: var(--spacing-4xl) 0;
+    }
+    
+    .section-header {
+        margin-bottom: var(--spacing-4xl);
+    }
+    
+    h1, h2, h3 {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    p {
+        margin-bottom: var(--spacing-md);
+    }
+}

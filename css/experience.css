@@ -1,0 +1,549 @@
+/* ===================================
+   EXPERIENCE SECTION STYLES
+   =================================== */
+
+.experience-section {
+    padding: var(--spacing-5xl) 0;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.experience-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 80%, rgba(29, 185, 84, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(29, 185, 84, 0.02) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.experience-content {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: var(--spacing-4xl);
+    align-items: start;
+}
+
+/* Timeline Container */
+.experience-timeline {
+    position: relative;
+}
+
+.experience-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        var(--spotify-green), 
+        rgba(29, 185, 84, 0.5), 
+        var(--spotify-green)
+    );
+    border-radius: 1px;
+}
+
+/* Experience Item */
+.experience-item {
+    position: relative;
+    margin-bottom: var(--spacing-4xl);
+    padding-left: var(--spacing-4xl);
+    border-radius: var(--radius-xl);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.experience-item::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 30px;
+    width: 18px;
+    height: 18px;
+    background: var(--spotify-green);
+    border: 3px solid var(--bg-primary);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+    z-index: 2;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    border-color: rgba(29, 185, 84, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.experience-item:hover::before {
+    box-shadow: 0 0 30px rgba(29, 185, 84, 0.8);
+    transform: scale(1.2);
+}
+
+/* Experience Date */
+.experience-date {
+    position: absolute;
+    left: -160px;
+    top: 20px;
+    text-align: right;
+    min-width: 140px;
+}
+
+.date-range {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--spotify-green);
+    margin-bottom: var(--spacing-xs);
+}
+
+.duration {
+    display: block;
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    font-style: italic;
+}
+
+/* Experience Content Wrapper */
+.experience-content-wrapper {
+    padding: var(--spacing-xl);
+}
+
+/* Experience Header */
+.experience-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.company-info {
+    flex: 1;
+}
+
+.job-title {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-secondary);
+}
+
+.company-name {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--spotify-green);
+    margin-bottom: var(--spacing-sm);
+}
+
+.location {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.location i {
+    color: var(--spotify-green);
+}
+
+/* Company Logo */
+.company-logo {
+    flex-shrink: 0;
+    margin-left: var(--spacing-lg);
+}
+
+.logo-placeholder {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.1), rgba(29, 185, 84, 0.2));
+    border: 2px solid rgba(29, 185, 84, 0.3);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: var(--spotify-green);
+    transition: var(--transition-normal);
+}
+
+.logo-placeholder:hover {
+    transform: rotate(5deg) scale(1.1);
+    border-color: var(--spotify-green);
+}
+
+/* Experience Details */
+.experience-details {
+    margin-top: var(--spacing-lg);
+}
+
+.job-description {
+    margin-bottom: var(--spacing-lg);
+}
+
+.job-description p {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* Achievements */
+.achievements {
+    margin-bottom: var(--spacing-lg);
+}
+
+.achievements h5 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-secondary);
+}
+
+.achievement-list {
+    list-style: none;
+    padding: 0;
+}
+
+.achievement-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    transition: var(--transition-fast);
+}
+
+.achievement-list li:hover {
+    background: rgba(29, 185, 84, 0.05);
+    transform: translateX(5px);
+}
+
+.achievement-list li i {
+    color: var(--spotify-green);
+    font-size: var(--font-size-sm);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.achievement-list li span {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Technologies Used */
+.technologies-used h5 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-secondary);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.tech-tag {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(29, 185, 84, 0.1);
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--spotify-green);
+    transition: var(--transition-fast);
+}
+
+.tech-tag:hover {
+    background: rgba(29, 185, 84, 0.2);
+    border-color: var(--spotify-green);
+    transform: translateY(-2px);
+}
+
+/* Career Growth Indicator */
+.career-growth {
+    margin: var(--spacing-4xl) 0;
+    text-align: center;
+    position: relative;
+}
+
+.career-growth::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    width: 18px;
+    height: 18px;
+    background: var(--spotify-green);
+    border: 3px solid var(--bg-primary);
+    border-radius: 50%;
+    transform: translateY(-50%);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+}
+
+.growth-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-lg);
+    padding: var(--spacing-lg);
+    background: rgba(29, 185, 84, 0.05);
+    border: 1px solid rgba(29, 185, 84, 0.2);
+    border-radius: var(--radius-xl);
+    margin-left: var(--spacing-4xl);
+}
+
+.growth-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--spotify-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    color: var(--spotify-black);
+}
+
+.growth-text h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+}
+
+.growth-text p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Experience Summary */
+.experience-summary {
+    position: sticky;
+    top: 120px;
+}
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: var(--transition-normal);
+}
+
+.summary-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(29, 185, 84, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.summary-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
+
+.summary-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    color: var(--spotify-black);
+}
+
+.summary-header h3 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-secondary);
+}
+
+/* Summary Stats */
+.summary-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.summary-stats .stat-item {
+    text-align: center;
+    padding: var(--spacing-md);
+    background: rgba(29, 185, 84, 0.05);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-fast);
+}
+
+.summary-stats .stat-item:hover {
+    background: rgba(29, 185, 84, 0.1);
+    transform: translateY(-2px);
+}
+
+.summary-stats .stat-number {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--spotify-green);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-secondary);
+}
+
+.summary-stats .stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.summary-text {
+    margin-top: var(--spacing-lg);
+}
+
+.summary-text p {
+    font-size: var(--font-size-sm);
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+    .experience-content {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-3xl);
+    }
+    
+    .experience-summary {
+        position: static;
+        order: -1;
+    }
+    
+    .experience-date {
+        position: static;
+        text-align: left;
+        margin-bottom: var(--spacing-md);
+        min-width: auto;
+    }
+    
+    .experience-item {
+        padding-left: var(--spacing-xl);
+    }
+    
+    .experience-timeline::before {
+        left: 15px;
+    }
+    
+    .experience-item::before {
+        left: 7px;
+    }
+    
+    .career-growth::before {
+        left: 15px;
+    }
+    
+    .growth-content {
+        margin-left: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .experience-section {
+        padding: var(--spacing-4xl) 0;
+    }
+    
+    .experience-item {
+        padding-left: var(--spacing-lg);
+        margin-bottom: var(--spacing-3xl);
+    }
+    
+    .experience-timeline::before {
+        display: none;
+    }
+    
+    .experience-item::before {
+        display: none;
+    }
+    
+    .career-growth::before {
+        display: none;
+    }
+    
+    .growth-content {
+        margin-left: 0;
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .experience-header {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+    
+    .company-logo {
+        margin-left: 0;
+        align-self: flex-start;
+    }
+    
+    .summary-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .achievement-list li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+    
+    .tech-tags {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .experience-content-wrapper {
+        padding: var(--spacing-lg);
+    }
+    
+    .job-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .company-name {
+        font-size: var(--font-size-base);
+    }
+    
+    .logo-placeholder {
+        width: 50px;
+        height: 50px;
+        font-size: var(--font-size-lg);
+    }
+    
+    .summary-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .summary-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}

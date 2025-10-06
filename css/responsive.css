@@ -1,0 +1,448 @@
+/* ===================================
+   RESPONSIVE DESIGN STYLES
+   Spotify-Inspired Mobile-First Approach
+   =================================== */
+
+/* ===================================
+   LARGE SCREENS (Desktops)
+   =================================== */
+
+@media (min-width: 1400px) {
+    .nav-container,
+    .container {
+        max-width: 1400px;
+    }
+    
+    .brand-name {
+        font-size: 1.5rem;
+    }
+    
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+/* ===================================
+   TABLET LANDSCAPE (1024px - 1199px)
+   =================================== */
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .nav-container {
+        padding: 0 var(--spacing-lg);
+    }
+    
+    .brand-name {
+        font-size: var(--font-size-xl);
+    }
+    
+    .nav-menu {
+        gap: var(--spacing-lg);
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) var(--spacing-lg);
+    }
+}
+
+/* ===================================
+   TABLET PORTRAIT (768px - 1023px)
+   =================================== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .nav-container {
+        padding: 0 var(--spacing-md);
+    }
+    
+    .brand-name {
+        font-size: var(--font-size-lg);
+    }
+    
+    .brand-title {
+        font-size: var(--font-size-xs);
+    }
+    
+    .nav-menu {
+        gap: var(--spacing-md);
+    }
+    
+    .nav-link {
+        font-size: var(--font-size-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+    
+    .container {
+        padding: 0 var(--spacing-lg);
+    }
+}
+
+/* ===================================
+   MOBILE LANDSCAPE (576px - 767px)
+   =================================== */
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .navbar {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .nav-container {
+        padding: 0 var(--spacing-md);
+        height: 70px;
+    }
+    
+    .brand-name {
+        font-size: var(--font-size-base);
+    }
+    
+    .brand-title {
+        font-size: 0.7rem;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(25, 20, 20, 0.98);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition-normal);
+        box-shadow: var(--shadow-xl);
+        gap: 0;
+        padding: var(--spacing-xl) 0;
+        border-top: 1px solid rgba(40, 40, 40, 0.5);
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: var(--spacing-sm) 0;
+        width: 100%;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: var(--spacing-lg) var(--spacing-xl);
+        font-size: var(--font-size-lg);
+        border-radius: var(--radius-lg);
+        margin: 0 var(--spacing-lg);
+        width: calc(100% - 2rem);
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .main-content {
+        margin-top: 70px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+}
+
+/* ===================================
+   MOBILE PORTRAIT (up to 575px)
+   =================================== */
+
+@media (max-width: 575px) {
+    .navbar {
+        padding: var(--spacing-xs) 0;
+    }
+    
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+        height: 70px;
+    }
+    
+    .brand-name {
+        font-size: 0.9rem;
+        line-height: 1.1;
+    }
+    
+    .brand-title {
+        font-size: 0.65rem;
+        margin-top: -1px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        flex-direction: column;
+        background: rgba(25, 20, 20, 0.98);
+        backdrop-filter: blur(20px);
+        width: 100%;
+        text-align: center;
+        transition: var(--transition-normal);
+        box-shadow: var(--shadow-xl);
+        gap: 0;
+        padding: var(--spacing-lg) 0;
+        border-top: 1px solid rgba(40, 40, 40, 0.5);
+        height: calc(100vh - 70px);
+        overflow-y: auto;
+        z-index: 999998 !important;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-item {
+        margin: var(--spacing-xs) 0;
+        width: 100%;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: var(--spacing-md) var(--spacing-lg);
+        font-size: var(--font-size-base);
+        border-radius: var(--radius-md);
+        margin: 0 var(--spacing-md);
+        width: calc(100% - 1.5rem);
+    }
+    
+    .hamburger {
+        display: flex;
+        padding: var(--spacing-xs);
+    }
+    
+    .bar {
+        width: 18px;
+        height: 2px;
+        margin: 2px 0;
+    }
+    
+    .main-content {
+        margin-top: 60px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    /* Improved mobile menu spacing */
+    .nav-menu {
+        justify-content: flex-start;
+        padding-top: var(--spacing-2xl);
+    }
+    
+    .nav-link {
+        font-weight: 500;
+        letter-spacing: 0.5px;
+    }
+}
+
+/* ===================================
+   SMALL MOBILE (up to 375px)
+   =================================== */
+
+@media (max-width: 375px) {
+    .nav-container {
+        padding: 0 var(--spacing-sm);
+        height: 55px;
+    }
+    
+    .brand-name {
+        font-size: 0.8rem;
+    }
+    
+    .brand-title {
+        font-size: 0.6rem;
+    }
+    
+    .nav-menu {
+        top: 55px;
+        height: calc(100vh - 55px);
+        padding: var(--spacing-lg) 0;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+        margin: 0 var(--spacing-sm);
+        width: calc(100% - 1rem);
+    }
+    
+    .hamburger {
+        padding: 2px;
+    }
+    
+    .bar {
+        width: 16px;
+        height: 2px;
+        margin: 2px 0;
+    }
+    
+    .main-content {
+        margin-top: 55px;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* ===================================
+   LANDSCAPE ORIENTATION FIXES
+   =================================== */
+
+@media (max-height: 500px) and (orientation: landscape) {
+    .nav-menu {
+        height: calc(100vh - 60px);
+        padding: var(--spacing-md) 0;
+        justify-content: space-around;
+    }
+    
+    .nav-item {
+        margin: 2px 0;
+    }
+    
+    .nav-link {
+        padding: var(--spacing-xs) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+}
+
+/* ===================================
+   HIGH DPI SCREENS
+   =================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .brand-name {
+        font-weight: 600; /* Slightly bolder for high DPI */
+    }
+    
+    .nav-link {
+        font-weight: 500;
+    }
+    
+    .bar {
+        height: 2.5px; /* Slightly thicker for high DPI */
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+
+@media print {
+    .navbar,
+    .hamburger {
+        display: none !important;
+    }
+    
+    .main-content {
+        margin-top: 0;
+    }
+    
+    body {
+        background: white;
+        color: black;
+    }
+    
+    .section {
+        page-break-inside: avoid;
+        margin: 1rem 0;
+    }
+}
+
+/* ===================================
+   ACCESSIBILITY IMPROVEMENTS
+   =================================== */
+
+/* Focus indicators for keyboard navigation */
+@media (prefers-reduced-motion: no-preference) {
+    .nav-link:focus,
+    .brand-link:focus,
+    .hamburger:focus {
+        outline: 2px solid var(--spotify-green);
+        outline-offset: 2px;
+        border-radius: var(--radius-sm);
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .navbar {
+        border-bottom: 2px solid var(--spotify-green);
+    }
+    
+    .nav-link {
+        border: 1px solid transparent;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        border-color: var(--spotify-green);
+    }
+    
+    .brand-name {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    .navbar {
+        animation: none;
+    }
+    
+    .nav-menu {
+        transition: none;
+    }
+    
+    .nav-link,
+    .brand-link,
+    .hamburger {
+        transition: none;
+    }
+    
+    .bar {
+        transition: none;
+    }
+}
+
+/* ===================================
+   TOUCH DEVICE OPTIMIZATIONS
+   =================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    /* Touch devices */
+    .nav-link {
+        min-height: 44px; /* Minimum touch target size */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .hamburger {
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .brand-link {
+        min-height: 44px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    /* Remove hover effects on touch devices */
+    .nav-link:hover::after {
+        width: 0;
+    }
+    
+    .nav-link.active::after {
+        width: 80%;
+    }
+}

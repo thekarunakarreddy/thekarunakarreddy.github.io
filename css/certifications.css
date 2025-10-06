@@ -1,0 +1,737 @@
+/* ===================================
+   CERTIFICATIONS SECTION STYLES
+   =================================== */
+
+.certifications-section {
+    padding: var(--spacing-5xl) 0;
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.certifications-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 70% 30%, rgba(29, 185, 84, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 30% 70%, rgba(29, 185, 84, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.certifications-content {
+    display: grid;
+    gap: var(--spacing-4xl);
+}
+
+/* Featured Certification */
+.certification-featured {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: var(--spacing-3xl);
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-normal);
+}
+
+.certification-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--spotify-gradient);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+}
+
+/* Certificate Badge */
+.cert-badge {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cert-logo {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.1), rgba(29, 185, 84, 0.2));
+    border: 3px solid rgba(29, 185, 84, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+    transition: var(--transition-normal);
+}
+
+.cert-image {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    border-radius: var(--radius-lg);
+}
+
+.cert-logo-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    font-size: 3rem;
+    color: var(--spotify-green);
+    text-align: center;
+}
+
+.cert-logo-placeholder span {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-sm);
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.comptia-logo {
+    background: linear-gradient(135deg, 
+        rgba(225, 17, 5, 0.1) 0%, 
+        rgba(225, 17, 5, 0.2) 50%, 
+        rgba(29, 185, 84, 0.1) 100%
+    );
+    border-color: rgba(225, 17, 5, 0.3);
+}
+
+.comptia-logo i {
+    color: #e11105;
+}
+
+.cisco-logo {
+    background: linear-gradient(135deg, 
+        rgba(0, 140, 186, 0.1) 0%, 
+        rgba(0, 140, 186, 0.2) 50%, 
+        rgba(29, 185, 84, 0.1) 100%
+    );
+    border-color: rgba(0, 140, 186, 0.3);
+}
+
+.cisco-logo i {
+    color: #008cba;
+}
+
+.cert-ribbon {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: var(--spotify-gradient);
+    color: var(--spotify-black);
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-md);
+}
+
+/* Certificate Content */
+.cert-content {
+    flex: 1;
+}
+
+.cert-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.cert-title {
+    font-size: var(--font-size-3xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-secondary);
+}
+
+.cert-provider {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--spotify-green);
+    margin-bottom: var(--spacing-md);
+}
+
+.cert-credential {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+}
+
+.credential-id {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    font-family: 'Courier New', monospace;
+}
+
+/* Cert dates styling */
+
+/* Certificate Dates */
+.cert-dates {
+    display: flex;
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-sm);
+}
+
+.issue-date,
+.expire-date {
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.issue-date {
+    color: var(--spotify-green);
+}
+
+/* Certificate Information */
+.cert-info {
+    margin-top: var(--spacing-md);
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.cert-date,
+.cert-id {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+}
+
+.cert-date i,
+.cert-id i {
+    color: var(--spotify-green);
+    width: 16px;
+}
+
+.cert-skills-inline {
+    margin-top: var(--spacing-sm);
+}
+
+.cert-link {
+    margin-top: var(--spacing-md);
+}
+
+.cert-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--spotify-green);
+    text-decoration: none;
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.cert-link a:hover {
+    color: var(--spotify-green-hover);
+    transform: translateX(3px);
+}
+
+/* Certification Summary */
+.cert-summary {
+    margin-top: var(--spacing-4xl);
+}
+
+.summary-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    transition: var(--transition-normal);
+}
+
+/* Certificate Details */
+.cert-details {
+    display: grid;
+    gap: var(--spacing-lg);
+}
+
+.cert-description p {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
+.cert-skills h4 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-secondary);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.skill-tag {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(29, 185, 84, 0.1);
+    border: 1px solid rgba(29, 185, 84, 0.3);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+    color: var(--spotify-green);
+    transition: var(--transition-fast);
+}
+
+.skill-tag:hover {
+    background: rgba(29, 185, 84, 0.2);
+    border-color: var(--spotify-green);
+    transform: translateY(-2px);
+}
+
+.verify-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: var(--spotify-gradient);
+    color: var(--spotify-black);
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.verify-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    color: var(--spotify-black);
+}
+
+/* Certifications Grid */
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-3xl);
+}
+
+/* Certificate Cards */
+.cert-card {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-xl);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--spacing-lg);
+}
+
+.cert-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(29, 185, 84, 0.1);
+    border: 2px solid rgba(29, 185, 84, 0.3);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    color: var(--spotify-green);
+    transition: var(--transition-normal);
+}
+
+/* Certification card content */
+
+.cert-card-title {
+    font-size: var(--font-size-lg);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-secondary);
+    line-height: 1.3;
+}
+
+.cert-card-description {
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+
+
+.cert-target {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-muted);
+    margin-top: var(--spacing-md);
+}
+
+.cert-target i {
+    color: var(--spotify-green);
+}
+
+/* Certification Journey Timeline */
+.cert-journey {
+    margin-top: var(--spacing-4xl);
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+}
+
+.journey-header {
+    text-align: center;
+    margin-bottom: var(--spacing-3xl);
+}
+
+.journey-header h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+    font-family: var(--font-secondary);
+}
+
+.journey-header p {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+}
+
+.journey-timeline {
+    position: relative;
+    display: grid;
+    gap: var(--spacing-xl);
+}
+
+.journey-timeline::before {
+    content: '';
+    position: absolute;
+    left: 30px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        var(--spotify-green), 
+        rgba(29, 185, 84, 0.5), 
+        rgba(108, 117, 125, 0.3)
+    );
+    border-radius: 1px;
+}
+
+.journey-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: var(--spacing-xl);
+    position: relative;
+    padding-left: var(--spacing-xl);
+}
+
+.journey-item::before {
+    content: '';
+    position: absolute;
+    left: 22px;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    border: 3px solid var(--bg-primary);
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.journey-item.completed::before {
+    background: var(--spotify-green);
+    box-shadow: 0 0 20px rgba(29, 185, 84, 0.5);
+}
+
+.journey-item.active::before {
+    background: #ffc107;
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.5);
+}
+
+.journey-item.planned::before {
+    background: #6c757d;
+    box-shadow: 0 0 10px rgba(108, 117, 125, 0.3);
+}
+
+.journey-date {
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    color: var(--spotify-green);
+    text-align: right;
+}
+
+.journey-content h4 {
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-secondary);
+}
+
+.journey-content p {
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Professional Development */
+.professional-development {
+    margin-top: var(--spacing-4xl);
+}
+
+.development-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    transition: var(--transition-normal);
+}
+
+.development-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(29, 185, 84, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.development-header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.development-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-2xl);
+    color: var(--spotify-black);
+}
+
+.development-header h3 {
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-secondary);
+}
+
+.development-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.development-stats .stat-item {
+    text-align: center;
+    padding: var(--spacing-lg);
+    background: rgba(29, 185, 84, 0.05);
+    border-radius: var(--radius-lg);
+    transition: var(--transition-fast);
+}
+
+.development-stats .stat-item:hover {
+    background: rgba(29, 185, 84, 0.1);
+    transform: translateY(-3px);
+}
+
+.development-stats .stat-number {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--spotify-green);
+    margin-bottom: var(--spacing-xs);
+    font-family: var(--font-secondary);
+}
+
+.development-stats .stat-label {
+    font-size: var(--font-size-xs);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.learning-platforms h4 {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+    font-family: var(--font-secondary);
+}
+
+.platform-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+.platform-tag {
+    padding: var(--spacing-xs) var(--spacing-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.platform-tag:hover {
+    background: rgba(29, 185, 84, 0.1);
+    border-color: rgba(29, 185, 84, 0.3);
+    color: var(--spotify-green);
+    transform: translateY(-2px);
+}
+
+.linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-xl);
+    background: #0077b5;
+    color: white;
+    text-decoration: none;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: var(--transition-normal);
+    box-shadow: var(--shadow-md);
+}
+
+.linkedin-btn:hover {
+    background: #005885;
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+    color: white;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+@media (max-width: 1024px) {
+    .certification-featured {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .cert-badge {
+        margin-bottom: var(--spacing-xl);
+    }
+    
+    .certifications-grid {
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .certifications-section {
+        padding: var(--spacing-4xl) 0;
+    }
+    
+    .certification-featured {
+        padding: var(--spacing-xl);
+    }
+    
+    .cert-logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .cert-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .journey-timeline::before {
+        left: 15px;
+    }
+    
+    .journey-item {
+        grid-template-columns: 80px 1fr;
+        padding-left: var(--spacing-lg);
+    }
+    
+    .journey-item::before {
+        left: 7px;
+    }
+    
+    .development-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .development-header {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .certification-featured {
+        padding: var(--spacing-lg);
+    }
+    
+    .cert-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .cert-logo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .cert-title {
+        font-size: var(--font-size-xl);
+    }
+    
+    .skill-tags,
+    .platform-tags {
+        justify-content: center;
+    }
+    
+    .journey-timeline::before {
+        display: none;
+    }
+    
+    .journey-item::before {
+        display: none;
+    }
+    
+    .journey-item {
+        grid-template-columns: 1fr;
+        padding-left: 0;
+    }
+    
+    .journey-date {
+        text-align: left;
+        margin-bottom: var(--spacing-sm);
+    }
+}

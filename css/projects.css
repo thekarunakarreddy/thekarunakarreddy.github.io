@@ -1,0 +1,478 @@
+/* Projects Section Styles */
+
+/* Projects Section Layout */
+.projects-section {
+    padding: var(--spacing-4xl) 0;
+    background: var(--bg-secondary);
+    position: relative;
+}
+
+.projects-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+}
+
+/* Projects Content */
+.projects-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4xl);
+}
+
+/* Projects Grid */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+/* Project Card */
+.project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    transition: var(--transition-normal);
+    position: relative;
+}
+
+.project-card:hover {
+    background: rgba(29, 185, 84, 0.03);
+    border-color: rgba(29, 185, 84, 0.3);
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.project-card.featured {
+    border-color: var(--spotify-green);
+    background: rgba(29, 185, 84, 0.05);
+}
+
+.project-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--spotify-green), var(--spotify-green-hover));
+}
+
+/* Project Image */
+.project-image {
+    height: 120px;
+    background: linear-gradient(135deg, rgba(29, 185, 84, 0.1), rgba(29, 185, 84, 0.05));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(29, 185, 84, 0.1) 50%, transparent 70%);
+    animation: shimmer 3s ease-in-out infinite;
+}
+
+.project-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(29, 185, 84, 0.2);
+    border: 2px solid rgba(29, 185, 84, 0.4);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--spotify-green);
+    font-size: var(--font-size-2xl);
+    z-index: 2;
+    position: relative;
+    transition: var(--transition-normal);
+}
+
+.project-card:hover .project-icon {
+    transform: scale(1.1) rotate(5deg);
+    background: rgba(29, 185, 84, 0.3);
+    border-color: var(--spotify-green);
+}
+
+.project-status {
+    position: absolute;
+    top: var(--spacing-sm);
+    right: var(--spacing-sm);
+    background: var(--spotify-green);
+    color: var(--bg-primary);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: var(--radius-full);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 3;
+}
+
+/* Project Content */
+.project-content {
+    padding: var(--spacing-2xl);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+}
+
+.project-header {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+}
+
+.project-title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1.3;
+}
+
+.project-subtitle {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-sm);
+    color: var(--spotify-green);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project-description {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-sm);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Technology Tags */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-xs);
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.tech-tag:hover {
+    background: rgba(29, 185, 84, 0.1);
+    border-color: rgba(29, 185, 84, 0.3);
+    color: var(--spotify-green);
+    transform: translateY(-2px);
+}
+
+/* Project Links */
+.project-links {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: auto;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--spotify-green);
+    color: var(--bg-primary);
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-sm);
+    font-weight: 600;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.project-link:hover {
+    background: var(--spotify-green-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.project-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.project-link:hover::before {
+    left: 100%;
+}
+
+.project-link.secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+}
+
+.project-link.secondary:hover {
+    background: rgba(29, 185, 84, 0.1);
+    border-color: var(--spotify-green);
+    color: var(--spotify-green);
+}
+
+.project-link i {
+    font-size: var(--font-size-sm);
+    transition: transform var(--transition-fast);
+}
+
+.project-link:hover i {
+    transform: translateX(3px);
+}
+
+/* GitHub Profile Section */
+.github-profile {
+    margin-top: var(--spacing-2xl);
+}
+
+.github-card {
+    background: rgba(29, 185, 84, 0.05);
+    border: 2px solid rgba(29, 185, 84, 0.2);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl);
+    text-align: center;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.github-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(29, 185, 84, 0.1) 50%, transparent 70%);
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+.github-card:hover {
+    background: rgba(29, 185, 84, 0.08);
+    border-color: var(--spotify-green);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.github-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--spotify-green);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--spacing-lg);
+    color: var(--bg-primary);
+    font-size: var(--font-size-3xl);
+    position: relative;
+    z-index: 2;
+    transition: var(--transition-normal);
+}
+
+.github-card:hover .github-icon {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.github-content {
+    position: relative;
+    z-index: 2;
+}
+
+.github-title {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-2xl);
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.github-description {
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.github-link {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-2xl);
+    background: var(--spotify-green);
+    color: var(--bg-primary);
+    text-decoration: none;
+    border-radius: var(--radius-full);
+    font-family: var(--font-secondary);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    transition: var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.github-link:hover {
+    background: var(--spotify-green-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.github-link i {
+    transition: transform var(--transition-fast);
+}
+
+.github-link:hover i {
+    transform: translateX(5px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: var(--spacing-3xl) 0;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .project-content {
+        padding: var(--spacing-xl);
+    }
+    
+    .project-links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+    
+    .project-link {
+        justify-content: center;
+    }
+    
+    .github-card {
+        padding: var(--spacing-2xl);
+    }
+    
+    .github-icon {
+        width: 60px;
+        height: 60px;
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .project-card {
+        margin: 0 var(--spacing-sm);
+    }
+    
+    .project-content {
+        padding: var(--spacing-lg);
+    }
+    
+    .project-title {
+        font-size: var(--font-size-lg);
+    }
+    
+    .tech-tag {
+        font-size: 0.7rem;
+        padding: 2px var(--spacing-xs);
+    }
+    
+    .github-card {
+        padding: var(--spacing-xl);
+        margin: 0 var(--spacing-sm);
+    }
+}
+
+/* Animation Keyframes */
+@keyframes shimmer {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .project-card,
+    .project-icon,
+    .github-icon,
+    .tech-tag {
+        transition: none;
+        animation: none;
+    }
+    
+    .project-image::before,
+    .github-card::before {
+        animation: none;
+    }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+    .project-card,
+    .github-card {
+        border-width: 2px;
+    }
+    
+    .project-card.featured {
+        border-width: 3px;
+    }
+}
+
+/* Focus indicators */
+.project-link:focus,
+.github-link:focus {
+    outline: 2px solid var(--spotify-green);
+    outline-offset: 2px;
+}
