@@ -1,7 +1,7 @@
+thekarunakarreddy.github.io
 # Portfolio Website
 
 A modern, responsive portfolio website built following (SDLC) best practices.
-thekarunakarreddy.github.io
 
 ## Project Structure
 
@@ -57,3 +57,4 @@ This is a personal portfolio project. If you have suggestions, please feel free 
 
 
 This project is open source and available under the [MIT License](LICENSE).
+
