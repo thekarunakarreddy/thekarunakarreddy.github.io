@@ -1,6 +1,7 @@
 # Portfolio Website
 
-A modern, responsive portfolio website built following Software Development Life Cycle (SDLC) best practices.
+A modern, responsive portfolio website built following (SDLC) best practices.
+thekarunakarreddy.github.io
 
 ## Project Structure
 
@@ -53,5 +54,6 @@ All SDLC documentation can be found in the `/docs` folder:
 This is a personal portfolio project. If you have suggestions, please feel free to open an issue.
 
 ## License
+
 
 This project is open source and available under the [MIT License](LICENSE).
